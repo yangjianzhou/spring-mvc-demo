@@ -1,6 +1,5 @@
 package com.iwill.mvc;
 
-import com.google.gson.Gson;
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,7 +20,6 @@ public class UserController {
 
     @RequestMapping(method = RequestMethod.POST)
     public ModelAndView createUser(User user) {
-        System.out.println(new Gson().toJson(user));
         ModelAndView mav = new ModelAndView();
         mav.setViewName("user/createSuccess");
         mav.addObject("user", user);

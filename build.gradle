@@ -14,6 +14,9 @@ idea {
 repositories {
     mavenCentral()
     mavenLocal()
+    flatDir {
+        dirs 'libs'
+    }
 }
 buildscript {
     repositories {
@@ -39,6 +42,9 @@ dependencies {
     compile group: 'org.apache.tomcat.embed', name: 'tomcat-embed-core', version: '8.0.46'
     compile group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.11.2'
     compile group: 'log4j', name: 'log4j', version: '1.2.17'
+    compile group: 'org.codehaus.groovy', name: 'groovy-all', version: '2.4.12'
+    compile group: 'com.bmuschko', name: 'gradle-tomcat-plugin', version: '2.4.2'
+    /*provided group: 'org.gradle', name: 'gradle-core', version: '4.8.1'*/
 
     def tomcatVersion = '8.0.46'
     tomcat "org.apache.tomcat.embed:tomcat-embed-core:${tomcatVersion}",
